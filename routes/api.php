@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/imageUpload','ImageController@ImageUpload')->name('image-upload');
+Route::post('/uploadToS3','ImageController@UploadToS3')->name('image-upload');
+Route::get('/getResize','ImageController@GetResizedImage')->name('image-resize');
